@@ -1,0 +1,48 @@
+{
+  "name": "unexpected-require",
+  "version": "1.0.0",
+  "description": "Easily mock out required modules using Unexpected and mock-require",
+  "main": "lib/unexpected-require.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha && npm run lint",
+    "test-documentation": "mocha documentation",
+    "travis": "npm test && npm run coverage && (<coverage/lcov.info coveralls || true)",
+    "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html",
+    "generate-site": "generate-site --require ./bootstrap-unexpected-markdown.js",
+    "update-examples": "generate-site --require ./bootstrap-unexpected-markdown.js --update-examples",
+    "deploy-site": "deploy-site.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unexpectedjs/unexpected-require.git"
+  },
+  "keywords": [
+    "test",
+    "assertion",
+    "Unexpected",
+    "mock-require",
+    "require"
+  ],
+  "author": "Joel Mukuthu <joelmukuthu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unexpectedjs/unexpected-require/issues"
+  },
+  "homepage": "https://unexpected.js.org/unexpected-require",
+  "devDependencies": {
+    "coveralls": "2.11.8",
+    "eslint": "1.10.3",
+    "eslint-config-onelint": "0.0.3",
+    "istanbul": "0.4.2",
+    "mocha": "2.4.5",
+    "sinon": "1.17.3",
+    "unexpected": "10.10.4",
+    "unexpected-documentation-site-generator": "4.0.0",
+    "unexpected-markdown": "1.3.1",
+    "unexpected-sinon": "10.1.1"
+  },
+  "dependencies": {
+    "mock-require": "1.2.1"
+  }
+}
