@@ -15,7 +15,7 @@ and [mock-require](https://github.com/boblauer/mock-require).
 [![Coverage Status](https://coveralls.io/repos/unexpectedjs/unexpected-require/badge.svg)](https://coveralls.io/r/unexpectedjs/unexpected-require)
 [![Dependency Status](https://david-dm.org/unexpectedjs/unexpected-require.svg)](https://david-dm.org/unexpectedjs/unexpected-require)
 
-```js
+```js#evaluate:false
 expect(function () {
     require('./some-module');
 }, 'with require mocked out', {
