@@ -30,8 +30,8 @@
   "homepage": "https://unexpected.js.org/unexpected-require",
   "devDependencies": {
     "coveralls": "2.11.8",
-    "eslint": "1.10.3",
-    "eslint-config-onelint": "0.0.3",
+    "eslint": "2.7.0",
+    "eslint-config-onelint": "1.0.2",
     "istanbul": "0.4.2",
     "mocha": "2.4.5",
     "sinon": "1.17.3",
