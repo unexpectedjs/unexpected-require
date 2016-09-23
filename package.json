@@ -1,6 +1,6 @@
 {
   "name": "unexpected-require",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Easily mock out required modules using Unexpected and mock-require",
   "main": "lib/unexpected-require.js",
   "scripts": {
