@@ -77,5 +77,30 @@ describe('unexpected-require', function () {
                 }, 'to throw', 'Cannot find module \'some-non-existent-module\'');
             });
         });
+
+        it('bubbles up errors from the next assertion', function () {
+            return expect(
+                function () {
+                    return expect(
+                        function () {
+                            require('some-non-existent-module');
+                            throw new Error('dummy error');
+                        },
+                        'with require mocked out', {
+                            'some-non-existent-module': {}
+                        },
+                        'not to error'
+                    );
+                },
+                'to error with',
+                'expected\n' +
+                'function () {\n' +
+                '  require(\'some-non-existent-module\');\n' +
+                '  throw new Error(\'dummy error\');\n' +
+                '}\n' +
+                'not to error\n' +
+                '  threw: Error(\'dummy error\')'
+            );
+        });
     });
 });
