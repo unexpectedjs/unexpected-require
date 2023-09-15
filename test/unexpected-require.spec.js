@@ -9,7 +9,7 @@ describe('unexpected-require', function () {
             return expect(
                 function () {
                     require('some-non-existent-module');
-                }, 'to throw', 'Cannot find module \'some-non-existent-module\''
+                }, 'to throw', /Cannot find module 'some-non-existent-module'/
             ).and('with require mocked out', {
                 'some-non-existent-module': {}
             }, 'not to throw');
@@ -21,7 +21,7 @@ describe('unexpected-require', function () {
                 function () {
                     var mod = require('some-non-existent-module');
                     mod(123);
-                }, 'to throw', 'Cannot find module \'some-non-existent-module\''
+                }, 'to throw', /Cannot find module 'some-non-existent-module'/
             ).and(
                 'with require mocked out', {
                     'some-non-existent-module': spy
@@ -38,7 +38,7 @@ describe('unexpected-require', function () {
             return expect(
                 function () {
                     sep = require('a-custom-path').sep;
-                }, 'to throw', 'Cannot find module \'a-custom-path\''
+                }, 'to throw', /Cannot find module 'a-custom-path'/
             ).and(
                 'with require mocked out', {
                     'a-custom-path': 'path'
@@ -66,7 +66,7 @@ describe('unexpected-require', function () {
             return expect(
                 function () {
                     require('some-non-existent-module');
-                }, 'to throw', 'Cannot find module \'some-non-existent-module\''
+                }, 'to throw', /Cannot find module 'some-non-existent-module'/
             ).and(
                 'with require mocked out', {
                     'some-non-existent-module': {}
@@ -74,7 +74,7 @@ describe('unexpected-require', function () {
             ).finally(function () {
                 return expect(function () {
                     require('some-non-existent-module');
-                }, 'to throw', 'Cannot find module \'some-non-existent-module\'');
+                }, 'to throw', /Cannot find module 'some-non-existent-module'/);
             });
         });
 
